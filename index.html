@@ -1,237 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Happy Birthday Ishika</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Sacramento&display=swap" rel="stylesheet" />
-    <style>
-      :root {
-        --bg-1: #fff1f5;
-        --bg-2: #ffd6e7;
-        --bg-3: #ffb3c8;
-        --card: rgba(255, 255, 255, 0.82);
-        --text: #4f2d3f;
-        --muted: #7a4b5a;
-        --pink: #ff4d8d;
-        --pink-dark: #d92e6f;
-        --shadow: rgba(168, 70, 110, 0.25);
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ffe6e6, #ffb3b3, #ff8080);
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      color: #4a2e2b;
+    }
+
+    .hearts-container {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .heart {
+      position: absolute;
+      background: rgba(255, 105, 180, 0.7);
+      width: 20px;
+      height: 20px;
+      transform: rotate(45deg);
+      animation: floatUp 6s linear infinite;
+      border-radius: 2px;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 105, 180, 0.7);
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: -10px;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) rotate(45deg) scale(0.6);
+        opacity: 1;
       }
-
-      * { box-sizing: border-box; }
-
-      html, body {
-        margin: 0;
-        min-height: 100%;
-        height: 100%;
-        font-family: 'Poppins', sans-serif;
+      100% {
+        transform: translateY(-10vh) rotate(45deg) scale(1.2);
+        opacity: 0;
       }
+    }
 
-      body {
-        display: grid;
-        place-items: center;
-        background: linear-gradient(135deg, var(--bg-1), var(--bg-2), var(--bg-3));
-        color: var(--text);
-        overflow: hidden;
-        position: relative;
+    .card {
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      padding: 40px 30px;
+      border-radius: 25px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      max-width: 650px;
+      width: 90%;
+      text-align: center;
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
       }
-
-      .sparkles, .hearts {
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        overflow: hidden;
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
+    }
 
-      .sparkle {
-        position: absolute;
-        width: 8px;
-        height: 8px;
-        background: rgba(255,255,255,0.9);
-        border-radius: 50%;
-        animation: twinkle 2.8s ease-in-out infinite;
-      }
+    .title {
+      font-family:"Permanent Marker", cursive ;
+      font-size: 4rem;
+      color: #d63384;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+    }
 
-      @keyframes twinkle {
-        0%, 100% { transform: scale(0.6); opacity: 0.2; }
-        50% { transform: scale(1.3); opacity: 1; }
-      }
+    .subtitle {
+      font-family:  "Indie Flower", cursive;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #5c3a21;
+      margin-bottom: 25px;
+      letter-spacing: 0.5px;
+    }
 
-      .heart {
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        background: rgba(255, 77, 141, 0.75);
-        transform: rotate(45deg);
-        animation: floatUp 7s linear infinite;
-        border-radius: 2px;
-      }
+    .message-box {
+      background: #fff0f3;
+      border-left: 5px solid #ff4d6d;
+      padding: 22px 20px;
+      border-radius: 12px;
+      text-align: left;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #593933;
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.02);
+      margin-bottom: 20px;
+    }
 
-      .heart::before,
-      .heart::after {
-        content: "";
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        background: rgba(255, 77, 141, 0.75);
-        border-radius: 50%;
-      }
+    .message-box p {
+      margin-bottom: 10px;
+    }
 
-      .heart::before { top: -10px; left: 0; }
-      .heart::after { top: 0; left: -10px; }
+    .footer-note {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #d63384;
+      margin-top: 15px;
+    }
 
-      @keyframes floatUp {
-        0% {
-          transform: translateY(110vh) rotate(45deg) scale(0.7);
-          opacity: 0;
-        }
-        10% { opacity: 1; }
-        100% {
-          transform: translateY(-12vh) rotate(45deg) scale(1.3);
-          opacity: 0;
-        }
-      }
+    .btn {
+      background: linear-gradient(45deg, #ff4d6d, #ff758c);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 15px;
+      box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+      transition: all 0.3s ease;
+    }
 
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(255, 77, 109, 0.6);
+    }
+
+    @media (max-width: 600px) {
       .card {
-        position: relative;
-        z-index: 1;
-        width: min(92vw, 680px);
-        padding: 42px 28px 30px;
-        border-radius: 28px;
-        background: var(--card);
-        backdrop-filter: blur(6px);
-        box-shadow: 0 25px 60px var(--shadow);
-        border: 1px solid rgba(255,255,255,0.5);
-        text-align: center;
+        padding: 28px 18px;
       }
 
-      .badge {
-        display: inline-block;
-        padding: 8px 20px;
-        border-radius: 999px;
-        background: rgba(255,77,141,0.1);
-        color: var(--pink-dark);
-        font-size: 0.8rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
+      .title {
+        font-size: 3rem;
       }
 
-      h1 {
-        margin: 18px 0 8px;
-        font-size: clamp(2.8rem, 6vw, 5rem);
-        line-height: 1;
-        font-family: 'Sacramento', cursive;
-        color: var(--pink-dark);
+      .subtitle {
+        font-size: 1.2rem;
       }
+    }
+  </style>
+</head>
 
-      .name {
-        margin: 0 0 22px;
-        font-size: clamp(1.4rem, 4vw, 2.3rem);
-        font-weight: 800;
-        letter-spacing: 0.04em;
-        color: var(--text);
-      }
+<body>
+  <div class="hearts-container" id="heartsContainer"></div>
 
-      .message {
-        background: rgba(255,255,255,0.5);
-        border-left: 5px solid var(--pink);
-        padding: 22px 20px;
-        border-radius: 18px;
-        text-align: left;
-        line-height: 1.9;
-        font-size: 1.02rem;
-        color: var(--muted);
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
-      }
+  <div class="card">
+    <h1 class="title">Happy Birthday</h1>
+    <div class="subtitle">My Habu ✨</div>
 
-      .message strong { color: var(--pink-dark); }
+    <div class="message-box">
+      <p>
+        Happy Birthday to the most favorite person of my life. I don't know where to start,
+        but I have so much to say to you. Today is your birthday, and I want this day to be
+        full of comfort, joy, love, and beautiful memories.
+      </p>
+      <p>
+        I just want you to be happy and smile more, because your happiness means everything
+        to me. May this year bring you peace, success, and all the blessings you deserve.
+      </p>
+      <p>
+        Always remember that my prayers are with you in every good and difficult time.
+        May all your wishes come true with Bholenath's grace, and may your life be full of
+        love, laughter, and happiness.
+      </p>
+    </div>
 
-      .footer {
-        margin-top: 26px;
-        font-size: 1.15rem;
-        font-weight: 700;
-        color: var(--pink-dark);
-      }
+    <div class="footer-note">With all my love 💖</div>
+    <a href="2nd.html" class="btn">Next 💌</a>
+  </div>
 
-      .cta {
-        margin-top: 24px;
-        display: inline-block;
-        padding: 14px 28px;
-        background: linear-gradient(135deg, var(--pink), #ff7aa6);
-        color: white;
-        border: none;
-        border-radius: 999px;
-        font-weight: 700;
-        text-decoration: none;
-        box-shadow: 0 12px 24px rgba(255,77,141,0.35);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-      }
+  <script>
+    function createHeart() {
+      const container = document.getElementById('heartsContainer');
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
 
-      .cta:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 16px 28px rgba(255,77,141,0.4);
-      }
+      const size = Math.random() * 15 + 10;
+      heart.style.width = `${size}px`;
+      heart.style.height = `${size}px`;
 
-      @media (max-width: 560px) {
-        .card { padding: 30px 18px 24px; }
-        .message { padding: 18px 16px; font-size: 0.96rem; }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="sparkles" id="sparkles"></div>
-    <div class="hearts" id="hearts"></div>
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+      heart.style.opacity = Math.random() * 0.5 + 0.3;
 
-    <main class="card">
-      <div class="badge">Special Day</div>
-      <h1>Happy Birthday</h1>
-      <div class="name">Ishika Jorwal ✨</div>
+      container.appendChild(heart);
 
-      <div class="message">
-        <p>
-          For the one who fills my days with joy, my thoughts with warmth, and my heart with peace —
-          <strong>Happy Birthday, Ishika</strong>.
-        </p>
-        <p>
-          May your life bloom with laughter, love, beautiful memories, and endless happiness.
-          May every dream you hold come true, and may every new day bring you closer to the life you deserve.
-        </p>
-        <p>
-          You are truly special, and I hope this year is full of sweet surprises, gentle blessings,
-          and moments that make your heart smile.
-        </p>
-      </div>
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
 
-      <div class="footer">With all my love 💖</div>
-      <a class="cta" href="javascript:void(0)">Celebrate with me</a>
-    </main>
-
-    <script>
-      const sparkles = document.getElementById('sparkles');
-      const hearts = document.getElementById('hearts');
-
-      for (let i = 0; i < 40; i++) {
-        const sparkle = document.createElement('span');
-        sparkle.className = 'sparkle';
-        sparkle.style.left = Math.random() * 100 + '%';
-        sparkle.style.top = Math.random() * 100 + '%';
-        sparkle.style.animationDelay = (Math.random() * 2) + 's';
-        sparkle.style.opacity = (Math.random() * 0.8 + 0.3).toFixed(2);
-        sparkles.appendChild(sparkle);
-      }
-
-      for (let i = 0; i < 14; i++) {
-        const heart = document.createElement('div');
-        heart.className = 'heart';
-        heart.style.left = Math.random() * 100 + '%';
-        heart.style.animationDuration = (Math.random() * 4 + 5) + 's';
-        heart.style.opacity = (Math.random() * 0.5 + 0.3).toFixed(2);
-        heart.style.transform = 'rotate(45deg) scale(' + (Math.random() * 0.8 + 0.6).toFixed(2) + ')';
-        hearts.appendChild(heart);
-      }
-    </script>
-  </body>
+    setInterval(createHeart, 300);
+  </script>
+</body>
 </html>
